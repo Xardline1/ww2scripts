@@ -57,7 +57,7 @@
                         location.reload();
                     }, 3600000);
                 } else {
-                    match = currentTimeLeft.match(/(\d+)\s+ч\.\s+(\d+)\s+м\./);
+                    match = currentTimeLeft.match(/(\d+)\s+ч\.\s+(\d+)\s+мин\./);
                     if (match) {
                         setTimeout(function () {
                             location.reload();
