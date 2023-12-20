@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Autobids and Autotimer
+// @name         Autobids_and_Autotimer
 // @namespace    http://tampermonkey.net/
 // @version      3.5
 // @description  Auto bids on auction ww2 and auto update the timer
