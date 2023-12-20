@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Autotimer on main page
+// @name         Autotimer_on_main_page
 // @namespace    http://tampermonkey.net/
 // @version      0.5
 // @description  Auto update timers on Main Page
@@ -66,5 +66,7 @@
         });
     }
 
+    setInterval(updateAuctionTime, 1000);
+})();
     setInterval(updateAuctionTime, 1000);
 })();
