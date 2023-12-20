@@ -1,8 +1,10 @@
 // ==UserScript==
 // @name         Autobids and Autotimer
 // @namespace    http://tampermonkey.net/
-// @version      3.2
+// @version      3.3
 // @description  Auto bids on auction ww2 and auto update the timer
+// updateURL https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
+// downloadURL https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
 // @author       Xardline
 // @match        https://ww1.ru/item/*
 // @grant        none
