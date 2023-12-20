@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Autotimer_on_main_page
 // @namespace    http://tampermonkey.net/
-// @version      0.8
+// @version      0.9
 // @description  Auto update timers on Main Page
 // @updateURL https://github.com/Xardline1/ww2scripts/raw/main/Autotimer_on_main_page.user.js
 // @downloadURL https://github.com/Xardline1/ww2scripts/raw/main/Autotimer_on_main_page.user.js
