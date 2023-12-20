@@ -3,8 +3,8 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.6
 // @description  Auto update timers on Main Page
-// @updateURL https://github.com/Xardline1/ww2scripts/raw/25fc4ac984dfe1b351c0107e51cb2a4b1c54f804/Autotimer_on_main_page.user.js
-// @downloadURL https://github.com/Xardline1/ww2scripts/raw/25fc4ac984dfe1b351c0107e51cb2a4b1c54f804/Autotimer_on_main_page.user.js
+// @updateURL https://github.com/Xardline1/ww2scripts/raw/main/Autotimer_on_main_page.user.js
+// @downloadURL https://github.com/Xardline1/ww2scripts/raw/main/Autotimer_on_main_page.user.js
 // @author       Xardline
 // @match        https://ww1.ru/auctions*
 // @grant        none
