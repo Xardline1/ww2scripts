@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Autobids_and_Autotimer
 // @namespace    http://tampermonkey.net/
-// @version      3.5
+// @version      3.6
 // @description  Auto bids on auction ww2 and auto update the timer
 // @updateURL https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
 // @downloadURL https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
@@ -292,15 +292,15 @@
             <p>Основной лот:</p>
             <label for="firstBid">
                 Первая ставка:
-                <div class="tooltip-icon" id="firstBidTooltipIcon" tooltip="Устанавливается на 15-ой секунде аукциона">?</div>
-                <div class="tooltip" id="firstBidTooltip">Устанавливается на 15-ой секунде аукциона</div>
+                <div class="tooltip-icon" id="firstBidTooltipIcon" tooltip="Устанавливается на 9-ой секунде аукциона">?</div>
+                <div class="tooltip" id="firstBidTooltip">Устанавливается на 9-ой секунде аукциона</div>
             </label>
             <input type="text" id="firstBid" value="${localStorage.getItem('firstBid') || ''}" placeholder="Пример: 1000">
             <br>
             <label for="secondBid">
                 Вторая ставка:
-                <div class="tooltip-icon" id="secondBidTooltipIcon" tooltip="Устанавливается на 3-ей секунде аукциона">?</div>
-                <div class="tooltip" id="secondBidTooltip">Устанавливается на 3-ей секунде аукциона</div>
+                <div class="tooltip-icon" id="secondBidTooltipIcon" tooltip="Устанавливается на 2-ой секунде аукциона">?</div>
+                <div class="tooltip" id="secondBidTooltip">Устанавливается на 2-ой секунде аукциона</div>
             </label>
             <input type="text" id="secondBid" value="${localStorage.getItem('secondBid') || ''}" placeholder="Пример: 3500">
             <br>
@@ -654,7 +654,7 @@
                             localStorage.setItem('firstBidPlaced', 'true');
                             clearInterval(intervalId);
                         } else if (minutes === 0 && seconds <= 15) {
-                            // клки по строке ставки на 15 сек
+                            // клик по строке ставки на 15 сек
                             document.getElementById('user-rate').click();
                         }
                     }
