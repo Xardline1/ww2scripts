@@ -833,6 +833,10 @@
                   playSound(audioFiles['10sec'], 1, '10sec');
               } else if (minutes === 0 && seconds === 0) {
                   playSound(audioFiles['0sec'], 1, '0sec');
+
+                  audioFiles['0sec'].addEventListener('ended', function () {
+                      location.reload();
+                  });
               }
 
               if (seconds > 0) {
