@@ -626,6 +626,11 @@
                     clearInterval(intervalId);
                 }
         }
+            // проверка наличия элемента .b-auction__warning перед запуском
+            var soldTitleElement = document.querySelector('.b-auction__warning');
+            if (soldTitleElement) {
+                checkAndReplaceLots();
+            }
 
         var firstBid = localStorage.getItem('firstBid');
         var secondBid = localStorage.getItem('secondBid');
