@@ -617,7 +617,7 @@
 
         function checkSoldTitle() {
             // проверка продажи
-            var soldTitleElement = document.querySelector('.b-auction__sold-title');
+            var soldTitleElement = document.querySelector('.b-auction__warning');
                 if (soldTitleElement) {
                     var secondBidPlaced = localStorage.getItem('secondBidPlaced');
                     if (secondBidPlaced === 'true') {
@@ -625,13 +625,7 @@
                     }
                     clearInterval(intervalId);
                 }
-            }
-
-            // проверка наличия элемента .b-auction__sold-title перед запуском
-            var soldTitleElement = document.querySelector('.b-auction__sold-title');
-            if (soldTitleElement) {
-                checkAndReplaceLots();
-            }
+        }
 
         var firstBid = localStorage.getItem('firstBid');
         var secondBid = localStorage.getItem('secondBid');
