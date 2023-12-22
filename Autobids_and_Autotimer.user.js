@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Autobids_and_Autotimer
 // @namespace    http://tampermonkey.net/
-// @version      4.2
+// @version      4.3
 // @description  Auto bids on auction ww2 and auto update the timer
 // @updateURL    https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
 // @downloadURL  https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
@@ -824,7 +824,9 @@
               var minutes = parseInt(match[1]);
               var seconds = parseInt(match[2]);
 
-              if (minutes === 5 && seconds === 0) {
+              if (minutes === 29 && seconds === 59) {
+                  location.reload();
+              } else if (minutes === 5 && seconds === 0) {
                   playSound(audioFiles['5min'], 0.5, '5min');
               } else if (minutes === 1 && seconds === 0) {
                   playSound(audioFiles['1min'], 0.5, '1min');
