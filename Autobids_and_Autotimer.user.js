@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Autobids_and_Autotimer
 // @namespace    http://tampermonkey.net/
-// @version      4.3
+// @version      4.4
 // @description  Auto bids on auction ww2 and auto update the timer
 // @updateURL    https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
 // @downloadURL  https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
@@ -619,14 +619,17 @@
         function checkSoldTitle() {
             // проверка продажи
             var soldTitleElement = document.querySelector('.b-auction__warning');
+            
                 if (soldTitleElement) {
                     var secondBidPlaced = localStorage.getItem('secondBidPlaced');
+                    
                     if (secondBidPlaced === 'true') {
                         checkAndReplaceLots();
                     }
                     clearInterval(intervalId);
                 }
         }
+        
             // проверка наличия элемента .b-auction__warning перед запуском
             var soldTitleElement = document.querySelector('.b-auction__warning');
             if (soldTitleElement) {
@@ -640,7 +643,9 @@
 
         if (firstBid && secondBid && firstBidPlaced === 'false' && secondBidPlaced === 'false') {
             var intervalId = setInterval(function() {
+                
                 var timeLeftElement = document.querySelector('.b-auction__time-left span');
+                
                 if (timeLeftElement) {
                     var currentTimeLeft = timeLeftElement.innerText.trim();
                     var match = currentTimeLeft.match(/(\d+)\s+мин\.\s+(\d+)\s+сек\./);
@@ -740,6 +745,7 @@
         var secondBidInput = document.getElementById(`secondBid-${index}`);
         var urlPattern = /^https:\/\/ww1\.ru\/item\/.*/;
         var numberPattern = /^\d+$/;
+        
         // пустышки
         var lotValue = lotInput.value.trim();
         var timeValue = timeInput.value;
@@ -761,9 +767,11 @@
         }
     }
     function loadSavedLots() {
+        
         // очистка перед лоадом
         var lotContainer = document.getElementById('lotContainer');
         lotContainer.innerHTML = '';
+        
         // макс индех лотов с стораже
         var maxIndex = 0;
 
@@ -780,6 +788,7 @@
         for (var i = 1; i <= maxIndex; i++) {
 
             (function(index) {
+                
                 var savedLink = localStorage.getItem(`lot-${index}`);
                 var savedTime = localStorage.getItem(`time-${index}`);
                 var savedFirstBid = localStorage.getItem(`firstBid-${index}`);
@@ -794,12 +803,14 @@
     function createAndAppendLot(savedLink, index, savedFirstBid, savedSecondBid, savedTime) {
         var lotContainer = document.getElementById('lotContainer');
         var newLotInput = createLotInput(index);
+        
         newLotInput.classList.add('lot-input-wrapper');
         // апдейт
         newLotInput.querySelector(`input[id^="lot-"]`).value = savedLink || '';
         newLotInput.querySelector(`input[id^="time-"]`).value = savedTime || '';
         newLotInput.querySelector(`input[id^="firstBid-"]`).value = savedFirstBid || '';
         newLotInput.querySelector(`input[id^="secondBid-"]`).value = savedSecondBid || '';
+        
         // добавить лот в конт
         lotContainer.appendChild(newLotInput);
     }
@@ -812,14 +823,15 @@
     createModal();
     autoPlaceBids();
 
+    // времячкО
     function updateAuctionTime() {
       var timeLeftElement = document.querySelector('.b-auction__time-left span');
 
       if (timeLeftElement) {
           var currentTimeLeft = timeLeftElement.innerText.trim();
           var match;
-
           match = currentTimeLeft.match(/(\d+)\s+мин\.\s+(\d+)\s+сек\./);
+          
           if (match) {
               var minutes = parseInt(match[1]);
               var seconds = parseInt(match[2]);
@@ -862,14 +874,14 @@
                   if (match) {
                     setTimeout(function () {
                       location.reload();
-                    }, 300000);
-                  }
+                        }, 300000);
+                    }
                 }
-          }
-      }
+            }
+        }
     }
 
-        function playSound(file, volume, key) {
+    function playSound(file, volume, key) {
 
         if (!soundPlayed[key]) {
             var audio = new Audio();
@@ -884,4 +896,5 @@
     }
 
     setInterval(updateAuctionTime, 1000);
+    
 })();
