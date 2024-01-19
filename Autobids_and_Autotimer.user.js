@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Autobids_and_Autotimer
 // @namespace    http://tampermonkey.net/
-// @version      4.7
+// @version      4.8
 // @description  Auto bids on auction ww2 and auto update the timer
 // @updateURL    https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
 // @downloadURL  https://github.com/Xardline1/ww2scripts/raw/main/Autobids_and_Autotimer.user.js
@@ -293,8 +293,8 @@
             <p>Основной лот:</p>
             <label for="firstBid">
                 Первая ставка:
-                <div class="tooltip-icon" id="firstBidTooltipIcon" tooltip="Устанавливается за 15 секунд до окончания аукциона!">?</div>
-                <div class="tooltip" id="firstBidTooltip">Устанавливается за 15 секунд до окончания аукциона!</div>
+                <div class="tooltip-icon" id="firstBidTooltipIcon" tooltip="Устанавливается за 18 секунд до окончания аукциона!">?</div>
+                <div class="tooltip" id="firstBidTooltip">Устанавливается за 18 секунд до окончания аукциона!</div>
             </label>
             <input type="text" id="firstBid" value="${localStorage.getItem('firstBid') || ''}" placeholder="Пример: 1000">
             <br>
@@ -654,12 +654,12 @@
                         var minutes = parseInt(match[1]);
                         var seconds = parseInt(match[2]);
 
-                        if (minutes === 0 && seconds <= 15) {
+                        if (minutes === 0 && seconds <= 18) {
                             placeBid(firstBid);
                             localStorage.setItem('firstBidPlaced', 'true');
                             clearInterval(intervalId);
-                        } else if (minutes === 0 && seconds <= 15) {
-                            // клик по строке ставки на 15 сек
+                        } else if (minutes === 0 && seconds <= 18) {
+                            // клик по строке ставки на 18 сек
                             document.getElementById('user-rate').click();
                         }
                     }
@@ -844,7 +844,7 @@
                   playSound(audioFiles['1min'], 0.5, '1min');
               } else if (minutes === 0 && seconds === 30) {
                   playSound(audioFiles['30sec'], 0.75, '30sec');
-              } else if (minutes === 0 && seconds === 13) {
+              } else if (minutes === 0 && seconds === 14) {
                   location.reload();
               } else if (minutes === 0 && seconds === 10) {
                   playSound(audioFiles['10sec'], 1, '10sec');
